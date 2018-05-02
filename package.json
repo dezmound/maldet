@@ -1,0 +1,23 @@
+{
+  "name": "maldet",
+  "version": "0.0.1",
+  "description": "MALware DETection service for linux OS",
+  "main": "maldet.js",
+  "scripts": {
+    "bootstrap:cfg": "node node_modules/cfg-worker/index.js --server",
+    "bootstrap:gdb": "node node_modules/gdb/gdb-server.js",
+    "bootstrap": "npm run bootstrap:cfg & npm run bootstrap:gdb",
+    "start": "npm run bootstrap & nodemon maldet.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cfg-worker": "github:dezmound/cfg#dev",
+    "gdb": "github:dezmound/gdb-server#dev",
+    "graph2vec": "dezmound/graph2vec"
+  },
+  "devDependencies": {
+    "nodemon": "^1.17.3"
+  }
+}

@@ -3,6 +3,9 @@
   "version": "0.0.1",
   "description": "MALware DETection service for linux OS",
   "main": "maldet.js",
+  "repository": {
+    "url": "https://github.com/dezmound/maldet"
+  },
   "scripts": {
     "bootstrap:cfg": "node node_modules/cfg-worker/index.js --server",
     "bootstrap:gdb": "node node_modules/gdb/gdb-server.js",
@@ -15,7 +18,10 @@
   "dependencies": {
     "cfg-worker": "github:dezmound/cfg#dev",
     "gdb": "github:dezmound/gdb-server#dev",
-    "graph2vec": "dezmound/graph2vec"
+    "graph2vec": "github:dezmound/graph2vec",
+    "process-list": "^1.2.2",
+    "request": "^2.85.0",
+    "request-promise-native": "^1.0.5"
   },
   "devDependencies": {
     "nodemon": "^1.17.3"

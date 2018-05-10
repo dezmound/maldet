@@ -7,9 +7,10 @@
     "url": "https://github.com/dezmound/maldet"
   },
   "scripts": {
+    "bootstrap:analyser": "python node_modules/malmind/malmind.py",
     "bootstrap:cfg": "node node_modules/cfg-worker/index.js --server",
     "bootstrap:gdb": "node node_modules/gdb/gdb-server.js",
-    "bootstrap": "npm run bootstrap:cfg & npm run bootstrap:gdb",
+    "bootstrap": "npm run bootstrap:analyser & npm run bootstrap:cfg & npm run bootstrap:gdb",
     "start": "npm run bootstrap & nodemon maldet.js"
   },
   "keywords": [],
@@ -19,6 +20,7 @@
     "cfg-worker": "github:dezmound/cfg#dev",
     "gdb": "github:dezmound/gdb-server#dev",
     "graph2vec": "github:dezmound/graph2vec",
+    "malmind": "github:dezmound/malmind#dev",
     "process-list": "^1.2.2",
     "request": "^2.85.0",
     "request-promise-native": "^1.0.5"

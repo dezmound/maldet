@@ -19,6 +19,7 @@ class Gateway {
         });
     }
     static getProcessCFG(gdbOutput) {
+        gdbOutput = gdbOutput.trim ? gdbOutput : JSON.stringify(gdbOutput);
         const requestOptions = Object.assign(requestBaseOptions, {
             url: cfgUrl(),
             body: {

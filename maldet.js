@@ -2,19 +2,6 @@ const QueueBuilder = require('./src/queueBuilder');
 const Gateway = require('./src/gateway');
 const vectorize = require('./src/vectorize');
 
-const normilizeIds = (graph) => {
-    let minId = Number.MAX_VALUE;
-    graph.nodes.forEach((node) => {
-        minId = Math.min(+node.id, minId);
-    });
-    graph.nodes = graph.nodes.map((node) => {
-        node.id -= minId - 1;
-        node.id += "";
-        return node;
-    });
-    return graph;
-}
-
 QueueBuilder.addHandler(async () => {
     const {queue} = QueueBuilder;
     try {
@@ -31,5 +18,6 @@ QueueBuilder.addHandler(async () => {
 });
 
 QueueBuilder.start({
-    interval: 512
+    interval: 512,
+    whitelist: ['a.out']
 });

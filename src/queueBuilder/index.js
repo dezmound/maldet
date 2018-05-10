@@ -10,9 +10,7 @@ const defaultOptions = {
         'cpu',
         'stime'
     ],
-    whitelist: [
-        'a.out'
-    ]
+    whitelist: []
 };
 
 let queue = [];

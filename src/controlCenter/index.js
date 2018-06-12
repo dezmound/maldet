@@ -11,7 +11,7 @@ const testProcess = (name, vector, analyserUrl) => {
     return rp(`${analyserUrl}/test?vector=${vector}`)
         .then(JSON.parse)
         .then((matches) => {
-            if (Object.values(classes).includes(matches[0])) {
+            if (Object.values(classes).includes(Math.round(matches[0]))) {
                 console.warn(`Suspicious process: ${name}`);
             }
         });

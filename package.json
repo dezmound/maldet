@@ -11,7 +11,7 @@
     "bootstrap:cfg": "node node_modules/cfg-worker/index.js --server",
     "bootstrap:gdb": "node node_modules/gdb/gdb-server.js",
     "bootstrap": "npm run bootstrap:analyser & npm run bootstrap:cfg & npm run bootstrap:gdb",
-    "start": "npm run bootstrap & nodemon maldet.js"
+    "start": "npm run bootstrap & node maldet.js"
   },
   "keywords": [],
   "author": "",

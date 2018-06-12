@@ -2,6 +2,12 @@ const QueueBuilder = require('./src/queueBuilder');
 const Gateway = require('./src/gateway');
 const vectorize = require('./src/vectorize');
 const {makeDecision} = require('./src/controlCenter')();
+const getWhiteList = () => {
+    if (process.env['WHITE_LIST']) {
+        return process.env['WHITE_LIST'].split(',');
+    }
+    return ['a.out'];
+};
 
 QueueBuilder.addHandler(async () => {
     const {queue} = QueueBuilder;
@@ -25,6 +31,6 @@ QueueBuilder.addHandler(async () => {
 });
 
 QueueBuilder.start({
-    interval: 2048,
-    whitelist: ['a.out']
+    interval: process.env['INTERVAL'] || 2048,
+    whitelist: getWhiteList()
 });
